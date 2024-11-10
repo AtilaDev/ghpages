@@ -1,7 +1,19 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [name, setName] = useState("");
+
   return (
-    <main className="flex min-h-screen flex-col justify-between p-24">
-      <h1>All is ready to create an Awesome site 🚀</h1>
+    <main className="p-24">
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="rounded border border-black px-2 hover:rounded"
+      />
+      <p>Name: {name}</p>
     </main>
   );
 }
